@@ -1,5 +1,24 @@
 # LCD refactor
 
+
+## A. Funcionalidad.
+El programa se ejecuta de acuerdo a la solicitud mencionada anteriormente
+
+## B. Elegancia de la solución.
+El codigo ha sido refactorizado manteniendo una alta cohesion y un bajo acoplamiento
+
+## C. Orientación a la calidad y mantenibilidad.
+Debido a la alta cohesion y bajo acoplamiento, es facil hacerle mantenimiento en una etapa posterior. 
+
+Por ejemplo, si se desea no ejecutar en consola pero sí en pantalla es facil hacer la transicion.
+Han sido implementados patrones de diseño:
+Singleton: Un servicio único que lee la consola con el fin de evitar el error que sucede al abrir de nuevo una consola cerrada. Esto permite separar la lectura de la cantidad de líneas y la lectura de los comandos (tamaño y mensaje a imprimir).
+
+Abstract Factory: Como los caracteres tienen los mismos atributos, y teniendo en cuenta que los segmentos de la matriz de impresión son los mismos (7 en total), se separa la creación de los caracteres de la creación de la matriz de impresión. Esto permite implementar posteriormente otros caracteres que se deseen imprimir (letras por ejemplo). Además brinda mas elegancia y claridad en el codigo dado. 
+
+## Pruebas
+Algunas pruebas han sido añadidas
+
  
 Objetivo: Programa que imprime números en estilo de una pantalla LCD 
 
@@ -33,20 +52,3 @@ Salida:
 
 </pre>
 
-## A. Funcionalidad.
-El programa se ejecuta de acuerdo a la solicitud mencionada anteriormente
-
-## B. Elegancia de la solución.
-El codigo ha sido refactorizado manteniendo una alta cohesion y un bajo acoplamiento
-
-## C. Orientación a la calidad y mantenibilidad.
-Debido a la alta cohesion y bajo acoplamiento, es facil hacerle mantenimiento en una etapa posterior. 
-
-Por ejemplo, si se desea no ejecutar en consola pero sí en pantalla es facil hacer la transicion.
-Han sido implementados patrones de diseño:
-Singleton: Un servicio único que lee la consola con el fin de evitar el error que sucede al abrir de nuevo una consola cerrada. Esto permite separar la lectura de la cantidad de líneas y la lectura de los comandos (tamaño y mensaje a imprimir).
-
-Abstract Factory: Como los caracteres tienen los mismos atributos, y teniendo en cuenta que los segmentos de la matriz de impresión son los mismos (7 en total), se separa la creación de los caracteres de la creación de la matriz de impresión. Esto permite implementar posteriormente otros caracteres que se deseen imprimir (letras por ejemplo). Además brinda mas elegancia y claridad en el codigo dado. 
-
-## Pruebas
-Algunas pruebas han sido añadidas
