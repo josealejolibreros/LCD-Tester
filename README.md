@@ -31,7 +31,7 @@ Salida:
 |     |      | |     |       | |     |
 |_ _ _|      | |_ _ _|  _ _ _| |_ _ _|
 
-
+</pre>
 
 ## A. Funcionalidad.
 El programa se ejecuta de acuerdo a la solicitud mencionada anteriormente
